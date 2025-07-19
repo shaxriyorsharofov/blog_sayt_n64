@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <title>Profil Sahifasi</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f2f2;
+            padding: 30px;
+        }
+        .profile-card {
+            background: white;
+            max-width: 400px;
+            margin: 0 auto;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .profile-card h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .info {
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        .label {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="profile-card">
+        <h2>Foydalanuvchi Profil Ma'lumotlari</h2>
+        <div class="info"><span class="label">Ism:</span> {{ user.first_name }}</div>
+        <div class="info"><span class="label">Familiya:</span> {{ user.last_name }}</div>
+        <div class="info"><span class="label">Username:</span> {{ user.username }}</div>
+        <div class="info"><span class="label">Email:</span> {{ user.email }}</div>
+    </div>
+    <a href="{% url 'index' %}">Home page</a><br>
+    <a href="{% url 'change-pass' %}">Change password</a>
+
+    
+</body>
+</html>

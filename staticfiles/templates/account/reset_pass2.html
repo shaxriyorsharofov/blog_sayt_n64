@@ -1,0 +1,26 @@
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+        {% endfor %}
+    {% endif %}
+<form method="post">
+    {% csrf_token %}
+    <h2>Parolni tiklash</h2>
+
+    <div>
+        <label for="password">Yangi parol</label><br>
+        <input type="password" name="password" id="password" required>
+    </div>
+
+    <div>
+        <label for="password_confirm">Parolni tasdiqlang</label><br>
+        <input type="password" name="password_confirm" id="password_confirm" required>
+    </div>
+
+    <div>
+        <label for="code">Tasdiqlash kodi</label><br>
+        <input type="text" name="code" id="code" maxlength="6" required>
+    </div>
+
+    <button type="submit">Parolni yangilash</button>
+</form>
