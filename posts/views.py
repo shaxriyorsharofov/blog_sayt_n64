@@ -13,7 +13,7 @@ def index(request):
         print(category_first_post)
         if category_first_post is not None:
             first_news.append(category_first_post)
-    if len(first_news) < 4:
+    if len(first_news) < 4 and len(first_news) > 0:
         news = News.objects.all().order_by('-id')
         first_news.extend(news[len(news)-4:len(news)-len(first_news)])
     
