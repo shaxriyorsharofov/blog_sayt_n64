@@ -17,7 +17,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 from dotenv import load_dotenv
 load_dotenv()
-SECRET_KEY = load_dotenv('SECRET_KEY')
+SECRET_KEY = os.getenv('SECRET_KEY')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
@@ -81,11 +81,11 @@ WSGI_APPLICATION = 'conf.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME':load_dotenv("DB_NAME"),
-        'HOST': load_dotenv("DB_HOST"),
+        'NAME':os.getenv("DB_NAME"),
+        'HOST': os.getenv("DB_HOST"),
         'PORT': 5432,
-        'USER': load_dotenv("DB_USER"),
-        'PASSWORD': load_dotenv("DB_PASSWORD")
+        'USER': os.getenv("DB_USER"),
+        'PASSWORD': os.getenv("DB_PASSWORD")
     }
 }
 # DATABASES = {
